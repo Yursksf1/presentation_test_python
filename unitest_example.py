@@ -30,6 +30,22 @@ class TestStringMethods(unittest.TestCase):
         with self.assertRaises(TypeError):
             s.split(2)
 
+    def test_assert_in_positive(self):
+        key = "geeks"
+        container = "geeksforgeeks"
+        # error message in case if test case got failed
+        message = "key is not in container."
+        # assertIn() to check if key is in container
+        self.assertIn(key, container, message)
+
+    def test_assert_in_negative(self):
+        key = "geekss"
+        container = "geeksforgeeks"
+        # error message in case if test case got failed
+        message = "key is not in container."
+        # assertIn() to check if key is in container
+        self.assertNotIn(key, container, message)
+
     def test_interes_simple(self):
         self.assertEqual(calcular_interes_simple(1000, 5, 3), 15000)
         self.assertEqual(validar_prestamo(400), 'no preste')
